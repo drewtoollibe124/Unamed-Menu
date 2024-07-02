@@ -1,0 +1,353 @@
+local G2L = {};
+
+-- StarterGui.My menu nge
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[My menu nge]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+-- StarterGui.My menu nge.Frame
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Size"] = UDim2.new(0, 521, 0, 311);
+G2L["2"]["Position"] = UDim2.new(0.29799, 0, 0.41315, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+-- StarterGui.My menu nge.Frame.TextLabel
+G2L["3"] = Instance.new("TextLabel", G2L["2"]);
+G2L["3"]["BorderSizePixel"] = 0;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["TextSize"] = 14;
+G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic);
+G2L["3"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["RichText"] = true;
+G2L["3"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["Text"] = [[Unamed menu]];
+G2L["3"]["Position"] = UDim2.new(0.30877, 0, -0.00193, 0);
+
+-- StarterGui.My menu nge.Frame.TextButton
+G2L["4"] = Instance.new("TextButton", G2L["2"]);
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["TextSize"] = 14;
+G2L["4"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Text"] = [[Fly (Press "]" to toggle)]];
+G2L["4"]["Position"] = UDim2.new(-0.00228, 0, 0.19013, 0);
+
+-- StarterGui.My menu nge.Frame.TextButton.Fly
+G2L["5"] = Instance.new("LocalScript", G2L["4"]);
+G2L["5"]["Name"] = [[Fly]];
+
+-- StarterGui.My menu nge.Frame.TextButton
+G2L["6"] = Instance.new("TextButton", G2L["2"]);
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextSize"] = 14;
+G2L["6"]["TextColor3"] = Color3.fromRGB(255, 255, 0);
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[Speed (Press "Speed" to toggle)]];
+G2L["6"]["Position"] = UDim2.new(-0.00269, 0, 0.53282, 0);
+
+-- StarterGui.My menu nge.Frame.TextButton.Speed
+G2L["7"] = Instance.new("LocalScript", G2L["6"]);
+G2L["7"]["Name"] = [[Speed]];
+
+-- StarterGui.My menu nge.Frame.TextButton
+G2L["8"] = Instance.new("TextButton", G2L["2"]);
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["TextSize"] = 14;
+G2L["8"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Text"] = [[Invisible (Press "X")]];
+G2L["8"]["Position"] = UDim2.new(-0.00384, 0, 0.83923, 0);
+
+-- StarterGui.My menu nge.Frame.TextButton.LocalScript
+G2L["9"] = Instance.new("LocalScript", G2L["8"]);
+
+
+-- StarterGui.My menu nge.Frame.TextButton
+G2L["a"] = Instance.new("TextButton", G2L["2"]);
+G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["TextSize"] = 14;
+G2L["a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Text"] = [[ESP (Press "[")]];
+G2L["a"]["Position"] = UDim2.new(0.61612, 0, 0.22508, 0);
+
+-- StarterGui.My menu nge.Frame.TextButton.LocalScript
+G2L["b"] = Instance.new("LocalScript", G2L["a"]);
+
+
+-- StarterGui.My menu nge.TextButton
+G2L["c"] = Instance.new("TextButton", G2L["1"]);
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["TextSize"] = 14;
+G2L["c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["c"]["Size"] = UDim2.new(0, 90, 0, 24);
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["Text"] = [[Show/Hide]];
+G2L["c"]["Position"] = UDim2.new(0.46517, 0, -0, 0);
+
+-- StarterGui.My menu nge.TextButton.LocalScript
+G2L["d"] = Instance.new("LocalScript", G2L["c"]);
+
+
+-- StarterGui.My menu nge.Frame.TextButton.Fly
+local function C_5()
+local script = G2L["5"];
+	-- Place this in a LocalScript
+	
+	local UserInputService = game:GetService("UserInputService")
+	local player = game.Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	
+	local flying = false
+	local speed = 50  -- Adjust the flying speed as needed
+	
+	local function startFlying()
+		local bodyVelocity = Instance.new("BodyVelocity")
+		bodyVelocity.Name = "FlyingBodyVelocity"
+		bodyVelocity.Velocity = Vector3.new(0, speed, 0)
+		bodyVelocity.MaxForce = Vector3.new(0, 4000, 0)
+		bodyVelocity.Parent = character.PrimaryPart
+	end
+	
+	local function stopFlying()
+		local bodyVelocity = character.PrimaryPart:FindFirstChild("FlyingBodyVelocity")
+		if bodyVelocity then
+			bodyVelocity:Destroy()
+		end
+	end
+	
+	local function toggleFly()
+		if flying then
+			stopFlying()
+		else
+			startFlying()
+		end
+		flying = not flying
+	end
+	
+	-- Bind the toggle function to the "]" key
+	UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+		if not gameProcessedEvent and input.KeyCode == Enum.KeyCode.RightBracket then
+			toggleFly()
+		end
+	end)
+	
+	-- Ensure flying stops when the character dies
+	player.CharacterAdded:Connect(function(char)
+		character = char
+		humanoid = char:WaitForChild("Humanoid")
+		humanoid.Died:Connect(stopFlying)
+	end)
+	
+end;
+task.spawn(C_5);
+-- StarterGui.My menu nge.Frame.TextButton.Speed
+local function C_7()
+local script = G2L["7"];
+	-- Define the speed value
+	local speed = 70
+	local speedEnabled = false
+	
+	-- Function to toggle speed on and off
+	local function toggleSpeed()
+		speedEnabled = not speedEnabled
+		if speedEnabled then
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+		else
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16 -- Default speed
+		end
+	end
+	
+	-- Connect toggle function to button click
+	script.Parent.MouseButton1Click:Connect(toggleSpeed)
+	
+	-- Check if player respawns
+	game.Players.LocalPlayer.CharacterAdded:Connect(function(character)
+		if speedEnabled then
+			character.Humanoid.WalkSpeed = speed
+		end
+	end)
+	
+	-- Set initial speed when script runs
+	if speedEnabled then
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+	end
+end;
+task.spawn(C_7);
+-- StarterGui.My menu nge.Frame.TextButton.LocalScript
+local function C_9()
+local script = G2L["9"];
+	-- Place this in a LocalScript
+	
+	local player = game.Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+	local UserInputService = game:GetService("UserInputService")
+	local isVisible = true
+	
+	local function makeInvisible()
+		for _, part in pairs(character:GetChildren()) do
+			if part:IsA("BasePart") then
+				part.Transparency = 1
+				if part:FindFirstChildOfClass("Decal") then
+					part:FindFirstChildOfClass("Decal").Transparency = 1
+				end
+			elseif part:IsA("Accessory") then
+				part.Handle.Transparency = 1
+			elseif part:IsA("Shirt") or part:IsA("Pants") or part:IsA("ShirtGraphic") then
+				part.Parent = nil
+			end
+		end
+		isVisible = false
+	end
+	
+	local function makeVisible()
+		for _, part in pairs(character:GetChildren()) do
+			if part:IsA("BasePart") then
+				part.Transparency = 0
+				if part:FindFirstChildOfClass("Decal") then
+					part:FindFirstChildOfClass("Decal").Transparency = 0
+				end
+			elseif part:IsA("Accessory") then
+				part.Handle.Transparency = 0
+			end
+		end
+		isVisible = true
+	end
+	
+	local function toggleVisibility()
+		if isVisible then
+			makeInvisible()
+		else
+			makeVisible()
+		end
+	end
+	
+	-- Bind the toggle function to a key press (for example, the "I" key)
+	UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+		if not gameProcessedEvent and input.KeyCode == Enum.KeyCode.X then
+			toggleVisibility()
+		end
+	end)
+	
+end;
+task.spawn(C_9);
+-- StarterGui.My menu nge.Frame.TextButton.LocalScript
+local function C_b()
+local script = G2L["b"];
+	-- Place this in a LocalScript
+	
+	local UserInputService = game:GetService("UserInputService")
+	local players = game:GetService("Players")
+	local localPlayer = players.LocalPlayer
+	
+	local espEnabled = false
+	local espColor = Color3.fromRGB(255, 0, 0)  -- Red color for the ESP box
+	local espThickness = 2
+	
+	-- Function to create a box around a player's character
+	local function createESPBox(player)
+		if player == localPlayer then return end  -- Skip the local player
+	
+		local character = player.Character
+		if character then
+			for _, part in ipairs(character:GetChildren()) do
+				if part:IsA("BasePart") then
+					local adornment = Instance.new("BoxHandleAdornment")
+					adornment.Adornee = part
+					adornment.Size = part.Size
+					adornment.Color3 = espColor
+					adornment.Transparency = 0.5
+					adornment.AlwaysOnTop = true
+					adornment.ZIndex = 0
+					adornment.Parent = part
+				end
+			end
+		end
+	end
+	
+	-- Function to remove all ESP boxes
+	local function removeESPBoxes()
+		for _, player in ipairs(players:GetPlayers()) do
+			if player.Character then
+				for _, part in ipairs(player.Character:GetChildren()) do
+					if part:IsA("BasePart") then
+						for _, adornment in ipairs(part:GetChildren()) do
+							if adornment:IsA("BoxHandleAdornment") then
+								adornment:Destroy()
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	-- Function to toggle ESP
+	local function toggleESP()
+		if espEnabled then
+			removeESPBoxes()
+		else
+			for _, player in ipairs(players:GetPlayers()) do
+				createESPBox(player)
+			end
+		end
+		espEnabled = not espEnabled
+	end
+	
+	-- Bind the toggle function to the "[" key
+	UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+		if not gameProcessedEvent and input.KeyCode == Enum.KeyCode.LeftBracket then
+			toggleESP()
+		end
+	end)
+	
+	-- Update ESP boxes when new players join
+	players.PlayerAdded:Connect(function(player)
+		player.CharacterAdded:Connect(function(character)
+			if espEnabled then
+				createESPBox(player)
+			end
+		end)
+	end)
+	
+	-- Update ESP boxes when characters respawn
+	for _, player in ipairs(players:GetPlayers()) do
+		player.CharacterAdded:Connect(function(character)
+			if espEnabled then
+				createESPBox(player)
+			end
+		end)
+	end
+	
+end;
+task.spawn(C_b);
+-- StarterGui.My menu nge.TextButton.LocalScript
+local function C_d()
+local script = G2L["d"];
+	script.Parent.MouseButton1Click:Connect(function()
+		local frame = script.Parent.Parent.Frame
+		frame.Visible = not frame.Visible
+	end)
+	
+end;
+task.spawn(C_d);
+
+return G2L["1"], require;
