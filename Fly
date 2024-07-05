@@ -1,0 +1,84 @@
+       local player = game:GetService("Players").LocalPlayer
+local mouse = player:GetMouse()
+local runService = game:GetService("RunService")
+local uis = game:GetService("UserInputService")
+
+local flying = false
+local speed = 50 -- Adjust this value for the flying speed
+local bodyGyro, bodyVelocity
+
+-- Function to start flying
+local function startFlying()
+    local character = player.Character
+    if not character or not character:FindFirstChild("HumanoidRootPart") then return end
+
+    bodyGyro = Instance.new("BodyGyro")
+    bodyGyro.P = 9e4
+    bodyGyro.maxTorque = Vector3.new(9e4, 9e4, 9e4)
+    bodyGyro.cframe = character.HumanoidRootPart.CFrame
+    bodyGyro.Parent = character.HumanoidRootPart
+
+    bodyVelocity = Instance.new("BodyVelocity")
+    bodyVelocity.velocity = Vector3.new(0, 0, 0)
+    bodyVelocity.maxForce = Vector3.new(9e4, 9e4, 9e4)
+    bodyVelocity.Parent = character.HumanoidRootPart
+
+    flying = true
+end
+
+-- Function to stop flying
+local function stopFlying()
+    flying = false
+    if bodyGyro then bodyGyro:Destroy() end
+    if bodyVelocity then bodyVelocity:Destroy() end
+end
+
+-- Function to update flying direction
+local function updateFlyDirection()
+    local character = player.Character
+    if not character or not character:FindFirstChild("HumanoidRootPart") then return end
+
+    local flyDirection = Vector3.new(0, 0, 0)
+    local camera = workspace.CurrentCamera
+
+    if uis:IsKeyDown(Enum.KeyCode.W) then
+        flyDirection = flyDirection + (camera.CFrame.LookVector * speed)
+    end
+    if uis:IsKeyDown(Enum.KeyCode.S) then
+        flyDirection = flyDirection - (camera.CFrame.LookVector * speed)
+    end
+    if uis:IsKeyDown(Enum.KeyCode.A) then
+        flyDirection = flyDirection - (camera.CFrame.RightVector * speed)
+    end
+    if uis:IsKeyDown(Enum.KeyCode.D) then
+        flyDirection = flyDirection + (camera.CFrame.RightVector * speed)
+    end
+    if uis:IsKeyDown(Enum.KeyCode.Space) then
+        flyDirection = flyDirection + Vector3.new(0, speed, 0)
+    end
+    if uis:IsKeyDown(Enum.KeyCode.LeftControl) then
+        flyDirection = flyDirection - Vector3.new(0, speed, 0)
+    end
+
+    if bodyVelocity then
+        bodyVelocity.velocity = flyDirection
+    end
+end
+
+-- Main loop to update flying state
+runService.RenderStepped:Connect(function()
+    if flying then
+        updateFlyDirection()
+    end
+end)
+
+-- Toggle fly on key press
+mouse.KeyDown:Connect(function(key)
+    if key == "f" then
+        if flying then
+            stopFlying()
+        else
+            startFlying()
+        end
+    end
+end)
